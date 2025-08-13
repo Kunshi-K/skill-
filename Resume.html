@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kunshi Kumaraswamy - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #006666; /* deep teal */
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --border-color: #dcdcdc;
+      --heading-font: 'Playfair Display', serif;
+      --body-font: 'Inter', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 40px;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 36px;
+      color: var(--primary-color);
+      font-family: var(--heading-font);
+      letter-spacing: 1px;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    section {
+      margin-top: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 24px;
+      font-family: var(--heading-font);
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 20px;
+      font-weight: 600;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    p, li {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    progress {
+      width: 220px;
+      height: 14px;
+      appearance: none;
+    }
+
+    progress::-webkit-progress-bar {
+      background-color: #eee;
+      border-radius: 7px;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: var(--primary-color);
+      border-radius: 7px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f9f9f9;
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media screen and (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+
+      progress {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Kunshi Kumaraswamy</h1>
+      <p class="contact-info">📧 kunshik9@gmail.com | 📱 +91-XXXXXXXXXX</p>
+    </header>
+
+    <section id="about">
+      <h2>👨‍💻 About Me</h2>
+      <p>I am Kunshi Kumaraswamy, a second-year diploma student at MIT-WPU.</p>
+      <p>Course: CSE 1 | Batch B | Roll No: 49</p>
+      <p>I enjoy programming, learning new technologies, and building useful projects.</p>
+    </section>
+
+    <section id="skills">
+      <h2>🧠 Skills</h2>
+      <p>HTML: <progress value="85" max="100"></progress></p>
+      <p>C Language: <progress value="70" max="100"></progress></p>
+      <p>C++: <progress value="30" max="100"></progress></p>
+      <p>Python (Basics): <progress value="10" max="100"></progress></p>
+    </section>
+
+    <section id="education">
+      <h2>🎓 Education</h2>
+      <ul>
+        <li>2027–2030: B.Tech in Computer Science & Engineering (Considering)</li>
+        <li>2024–2026: Diploma in Computer Science & Engineering, MIT-WPU (Ongoing)</li>
+        <li>2012–2024: School Education (Completed)</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>💼 Projects</h2>
+      <h3>1. HTML Portfolio Website</h3>
+      <p>A personal website built using HTML and CSS to showcase my profile, education, and skills.</p>
+      <p><strong>Tech Used:</strong> HTML, CSS</p>
+
+      <h3>2. Medical Appointment Form</h3>
+      <p>A responsive form created using HTML and CSS for patients to book medical appointments.</p>
+      <p><strong>Tech Used:</strong> HTML, CSS</p>
+    </section>
+
+    <section id="interests">
+      <h2>🎯 Interests</h2>
+      <ul>
+        <li>Web Development</li>
+        <li>UI/UX Design</li>
+        <li>Exploring new languages (e.g., Python, C++)</li>
+        <li>Teamwork on coding projects</li>
+      </ul>
+    </section>
+
+    <section id="mit">
+      <h2>🏫 College Info</h2>
+      <p>Studying at MIT-WPU</p>
+      <p>My college ERP: <a href="https://erp.mitwpu.edu.in/login.aspx" target="_blank">https://erp.mitwpu.edu.in/login.aspx</a></p>
+    </section>
+
+    <section id="grades">
+      <h2>📊 Academic Performance</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>College Year</th>
+          <th>CGPA</th>
+        </tr>
+        <tr>
+          <td>Kunshi Kumaraswamy</td>
+          <td>F.Y 1st Sem</td>
+          <td>8.5</td>
+        </tr>
+        <tr>
+          <td>Kunshi Kumaraswamy</td>
+          <td>F.Y 2nd Sem</td>
+          <td>8.7</td>
+        </tr>
+      </table>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Kunshi Kumaraswamy. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
