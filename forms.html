@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Appointment Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e0f7fa;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .form-wrapper {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 40px;
+      background: #f0f8ff;
+      border-radius: 20px;
+      box-shadow: 12px 12px 24px #c1e1ec, -8px -8px 20px #ffffff;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00796b;
+    }
+
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      color: #006064;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-title::before {
+      content: '🩺';
+      margin-right: 10px;
+      font-size: 1.4rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #e6f7ff;
+      box-shadow: inset 4px 4px 8px #c1e1ec, inset -4px -4px 8px #ffffff;
+    }
+
+    label {
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      background: #f0f8ff;
+      padding: 0 8px;
+      font-size: 13px;
+      color: #00796b;
+      font-weight: 600;
+    }
+
+    .checkbox-group label {
+      font-size: 14px;
+      font-weight: 400;
+      display: block;
+      margin: 6px 0;
+    }
+
+    .submit-btn {
+      margin-top: 30px;
+      background: #00acc1;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 100px 20px;
+      color: #00796b;
+    }
+
+    .success-message h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .success-message p {
+      font-size: 1.2rem;
+      color: #006064;
+    }
+
+    @media (max-width: 600px) {
+      .form-wrapper {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-wrapper" id="medicalForm">
+    <h2>Medical Appointment Form</h2>
+
+    <form onsubmit="event.preventDefault(); document.getElementById('medicalForm').style.display='none'; document.getElementById('success').style.display='block';">
+      <div class="section-title">Patient Information</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" required>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" required>
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email">
+        </div>
+      </div>
+
+      <div class="section-title">Symptoms</div>
+      <div class="form-group">
+        <label for="symptoms">Other Symptoms</label>
+        <textarea id="symptoms" rows="3"></textarea>
+      </div>
+      <div class="checkbox-group">
+        <label><input type="checkbox"> Fever</label>
+        <label><input type="checkbox"> Cough</label>
+        <label><input type="checkbox"> Headache</label>
+        <label><input type="checkbox"> Shortness of Breath</label>
+      </div>
+
+      <div class="section-title">Medical History</div>
+      <div class="checkbox-group">
+        <label><input type="checkbox"> Diabetes</label>
+        <label><input type="checkbox"> Hypertension</label>
+        <label><input type="checkbox"> Asthma</label>
+        <label><input type="checkbox"> Previous Surgery</label>
+      </div>
+      <div class="form-group">
+        <label for="family">Family Medical History</label>
+        <textarea id="family" rows="3"></textarea>
+      </div>
+
+      <div class="section-title">Insurance & Appointment</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="hasInsurance">Do you have Insurance?</label>
+          <select id="hasInsurance" onchange="toggleInsuranceFields()">
+            <option value="">Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group insurance-field" id="insuranceNumberField" style="display:none;">
+          <label for="insurance">Insurance Number</label>
+          <input type="text" id="insurance">
+        </div>
+        <div class="form-group insurance-field" id="uploadField" style="display:none;">
+          <label for="upload">Upload Insurance</label>
+          <input type="file" id="upload">
+        </div>
+
+        <div class="form-group">
+          <label for="doctor">Preferred Doctor</label>
+          <input type="text" id="doctor">
+        </div>
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date">
+        </div>
+        <div class="form-group">
+          <label for="time">Preferred Time</label>
+          <div style="display: flex; gap: 10px;">
+            <input type="time" id="time" style="flex: 1;">
+            <select id="ampm" style="flex: 0 0 80px;">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button class="submit-btn" type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <!-- Success Message Section -->
+  <div class="success-message" id="success">
+    <h1>✅ Submitted Successfully!</h1>
+    <p>Thank you for submitting your medical form. We will contact you soon.</p>
+  </div>
+
+  <script>
+    function toggleInsuranceFields() {
+      var insuranceSelect = document.getElementById('hasInsurance').value;
+      var insuranceFields = document.querySelectorAll('.insurance-field');
+      insuranceFields.forEach(field => {
+        field.style.display = (insuranceSelect === 'yes') ? 'block' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
