@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Adoption Center</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e6f2ff; 
+    }
+    
+    header {
+      background-color: #4da6ff;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      border-bottom: 4px solid #0059b3;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin: 5px 0 0 0;
+      font-size: 1.2em;
+    }
+    .intro {
+      text-align: center;
+      padding: 20px;
+      background-color: #cce6ff;
+      font-size: 18px;
+      border-bottom: 2px solid #99ccff;
+    }
+    .pet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 30px;
+    }
+    .pet-card {
+      border: 2px solid #99ccff;
+      border-radius: 12px;
+      background-color: #ffffff;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .pet-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 6px 14px rgba(0,0,0,0.2);
+    }
+    .pet-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border: 3px solid #4da6ff; 
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .pet-card img:hover {
+      transform: scale(1.05);
+    }
+    .pet-card h3 {
+      margin: 12px 0 5px 0;
+      color: #004080;
+    }
+    .pet-card p {
+      margin: 4px 0;
+      color: #333;
+    }
+    .contact {
+      background-color: #4da6ff;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      border-top: 4px solid #0059b3;
+    }
+    .contact h2 {
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> 🐾 Pet Adoption Center🐾 </h1>
+    <p>Find your new best friend today!</p>
+  </header>
+
+  <div class="intro">
+    <p>We rescue and care for pets until they find a loving home.  
+    Adopt one of our adorable companions and give them a forever family. 💙</p>
+  </div>
+
+  <!-- PETS GRID -->
+  <div class="pet-grid">
+    <div class="pet-card">
+      <img src="https://petsfarm.net.in/wp-content/uploads/2024/06/labrador-retriever-puppy-in-india-1-1.webp" alt="Dog">
+      <h3>Buddy</h3>
+      <p>Breed: Labrador</p>
+      <p>Age: 8 months</p>
+    </div>
+
+    <div class="pet-card">
+      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTNOzNWFMMwaT_-lrzCK1oJKJSdEE5mHWu7WqMZ1mGZSq5pwiiBJiE3Q_lzQhILDBo2JXC0439TqtM9U7DceBa1bvQW4syvXLjnjS0jcg" alt="Cat">
+      <h3>Luna</h3>
+      <p>Breed: Golden Retriever</p>
+      <p>Age: 1 year</p>
+    </div>
+
+    <div class="pet-card">
+      <img src="https://images.squarespace-cdn.com/content/v1/5b3fc87b45776e887e966e82/ea4b3853-7558-4048-8051-d986e71ec39d/beagle-on-meadow-2021-08-26-15-58-22-utc.jpg" alt="Dog">
+      <h3>Max</h3>
+      <p>Breed: Beagle</p>
+      <p>Age: 3 years</p>
+    </div>
+
+    <div class="pet-card">
+      <img src="https://cdn.britannica.com/84/232784-050-1769B477/Siberian-Husky-dog.jpg" alt="Cat">
+      <h3>Milo</h3>
+      <p>Breed: Siberain Husky</p>
+      <p>Age: 2 years</p>
+    </div>
+
+    <div class="pet-card">
+      <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5Y1favjsW0swdVLNhmHFbqNVBqgIPz1OqMecF7H1xudNJyfKYGghUAlvJcWBgHvpsCDSbLKYJKoMyahWwkh41oJJPS71eHqgA7jU9EQ" alt="Cat">
+      <h3>Tommy</h3>
+      <p>Breed: Poodle </p>
+      <p>Age: 4 years</p>
+    </div>
+
+    
+  </div>
+
+  <div class="contact">
+    <h2>📞 Contact Us</h2>
+    <p>Email: adopt@petcenter.com</p>
+    <p>Phone: +91-8766536215</p>
+    <p>Address: Pet Adoption Center, Main Street, City, India</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Pet Adoption Center | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
