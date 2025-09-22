@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BeatWave</title>
+<style>
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(270deg, #0f0f0f, #1a1a1a, #0f0f0f);
+  background-size: 600% 600%;
+  animation: bgShift 18s ease infinite;
+  color: #f1f1f1;
+}
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(20, 20, 20, 0.9);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #222;
+}
+header h1 {
+  font-size: 2rem;
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+nav a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 6px #00ffcc;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+}
+.hero-text {
+  max-width: 50%;
+  animation: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+.btn {
+  background: #00ffcc;
+  color: #111;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00ffcc;
+}
+.hero img {
+  width: 350px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 25px #00ffcc;
+  animation: spin 10s linear infinite, float 3s ease-in-out infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.playlist {
+  padding: 50px;
+  text-align: center;
+}
+.playlist h3 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.card {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 20px;
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.4s, box-shadow 0.4s;
+  animation: popIn 1s ease;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 15px #00ffcc;
+}
+.card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.card h4 {
+  margin: 10px 0;
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc;
+}
+.card p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  border-top: 1px solid #222;
+  color: #888;
+  margin-top: 40px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>BeatWave</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Playlists</a>
+    <a href="#">Albums</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h2>Feel the Beat, Anytime</h2>
+    <p>Stream your favorite tracks, explore trending hits, and create playlists that move with you.</p>
+    <button class="btn">Start Listening</button>
+  </div>
+  <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4" alt="Album Art">
+</section>
+
+<section class="playlist">
+  <h3>Trending Now</h3>
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="Album">
+      <h4>Chill Vibes</h4>
+      <p>Relaxing lo-fi beats for studying and unwinding.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1485579149621-3123dd979885" alt="Album">
+      <h4>Top Hits</h4>
+      <p>Today’s biggest hits, all in one place.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2" alt="Album">
+      <h4>Workout Mix</h4>
+      <p>Pumping beats to fuel your energy and workouts.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30" alt="Album">
+      <h4>Party Anthems</h4>
+      <p>Turn up the night with electrifying party tracks.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Album">
+      <h4>Romantic Hits</h4>
+      <p>Love songs that will melt your heart and soul.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93" alt="Album">
+      <h4>Classic Rock</h4>
+      <p>Iconic anthems from the legends of rock music.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 BeatWave. All rights reserved.</p>
+</footer>
+</body>
+</html>
