@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MovieNest</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: white;
+}
+
+/* ---------- Flexbox Header ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header h1 {
+  color: #e50914;
+  margin: 0;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 60px;
+  min-height: 70vh;
+  background: url("https://www.theconjuringmovie.com/images/share.jpg") center/cover no-repeat;
+  position: relative;
+  color: white;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+.hero-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+/* ---------- Info Box ---------- */
+.info {
+  margin-top: 20px;
+  background: rgba(34, 34, 34, 0.8);
+  padding: 15px;
+  border-left: 4px solid #e50914;
+  border-radius: 8px;
+}
+.info p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* ---------- Movie Grid ---------- */
+.movies {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.movie {
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.movie:hover {
+  transform: scale(1.05);
+}
+.movie img {
+  width: 100%;
+  display: block;
+}
+.movie h3 {
+  padding: 10px;
+  margin: 0;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 1024px) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero {
+    padding: 40px 20px;
+    text-align: center;
+    justify-content: center;
+  }
+  .hero-text {
+    max-width: 100%;
+  }
+  .movies {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>MovieNest</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Movies</a>
+    <a href="#">Series</a>
+    <a href="#">My List</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h2>Featured Movie</h2>
+    <p>Stream the latest blockbusters and your favorite classics anytime, anywhere.</p>
+    <div class="info">
+      <p>🌍 Available in Multiple Languages</p>
+      <p>🎙 Dubbed Versions Included</p>
+      <p>📜 English Subtitles Available</p>
+    </div>
+  </div>
+</section>
+
+<!-- Movies Section -->
+<section class="movies">
+  <div class="movie">
+    <img src="https://www.republicrecords.com/cdn/shop/files/REPU-00092KPOPDemonHunters_CollectionPage-Banner-02Mobile.png?v=1751556728&width=900" alt="KPOP DemonHunters">
+    <h3>KPOP DemonHunters</h3>
+  </div>
+  <div class="movie">
+    <img src="https://external-preview.redd.it/official-first-poster-for-venom-the-last-dance-v0-QRoTFuj9xNnWiaJal.jpg" alt="Venom - The Last Dance">
+    <h3>Venom: The Last Dance</h3>
+  </div>
+  <div class="movie">
+    <img src="https://m.media-amazon.com/images/S/pv-target-images/810bb7094eb57cd3ff84ac98914740fc5a.jpg" alt="Eleven">
+    <h3>Eleven</h3>
+  </div>
+  <div class="movie">
+    <img src="https://m.media-amazon.com/images/I/71TzNV8bTFL._UF1000,1000_QL80_.jpg" alt="Jurassic World Rebirth">
+    <h3>Jurassic World Rebirth</h3>
+  </div>
+  <div class="movie">
+    <img src="https://m.media-amazon.com/images/M/MV5BMDY2OGY1NzQtODg3NC00YzZlLWE0NjEtYzdjMTV1FMjpgUX1000.jpg" alt="Friend's Request">
+    <h3>Friend's Request</h3>
+  </div>
+  <div class="movie">
+    <img src="https://m.media-amazon.com/images/S/pv-target-images/b8a0537413009fe68f2cd20f2b7fbbc9caa.jpg" alt="Seetha Raman">
+    <h3>Seetha Raman</h3>
+  </div>
+  <div class="movie">
+    <img src="https://m.media-amazon.com/images/M/MV5BMTg5MzUxNzgxNV5BMl5BanBnXkFtZTgwMTM2NzV1FMjpgUX1000.jpg" alt="Boss Baby">
+    <h3>Boss Baby</h3>
+  </div>
+  <div class="movie">
+    <img src="https://m.media-amazon.com/images/M/MV5BNzc4ZWQ3NmYtODE0Ny00YTQ4LTlkZWItNTBkMGV1FMjpgUX1000.jpg" alt="3 Idiots">
+    <h3>3 Idiots</h3>
+  </div>
+</section>
+
+</body>
+</html>
